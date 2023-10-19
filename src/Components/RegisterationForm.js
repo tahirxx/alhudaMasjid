@@ -1,0 +1,61 @@
+import React, { useState } from 'react';
+import axios from 'axios'; // You need to import axios
+
+function RegistrationForm() {
+  const [formData, setFormData] = useState({
+    username: '',
+    email: '',
+    password: '',
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    // Implement registration logic, e.g., make an API request to your server
+    try {
+      const response = await axios.post('/api/register', formData); // Make sure to use the correct API endpoint
+      // Assuming your API responds with a success message
+      if (response.data.success) {
+        alert('Registration successful!'); // You can replace this with any user feedback mechanism you prefer.
+      } else {
+        alert('Registration failed. Please try again.'); // Handle registration errors.
+      }
+    } catch (error) {
+      console.error('Error registering user:', error);
+      alert('An error occurred during registration.'); // Handle network or server errors.
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        name="username"
+        placeholder="Username"
+        value={formData.username}
+        onChange={handleInputChange}
+      />
+      <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        value={formData.email}
+        onChange={handleInputChange}
+      />
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        value={formData.password}
+        onChange={handleInputChange}
+      />
+      <button type="submit">Register</button>
+    </form>
+  );
+}
+
+export default RegistrationForm;
