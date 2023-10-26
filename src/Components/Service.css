@@ -1,0 +1,10 @@
+.service-container {
+    margin: 20px;
+}
+
+.service-container h1 {
+    font-weight: bold;
+    font-size: 27px;
+    white-space: 1px;
+    position: relative;
+}

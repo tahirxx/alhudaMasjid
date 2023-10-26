@@ -1,0 +1,9 @@
+.about {
+    margin: 20px;
+}
+.about h1 {
+    font-weight: bold;
+    font-size: 27px;
+    white-space: 1px;
+    position: relative;
+}
