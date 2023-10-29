@@ -2,7 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import './Home.css'; // Import the CSS file for styling
 import axios from 'axios';
-
+import flyer from './Images/Flyer1.jpg'
+import flyer3 from './Images/Flyer3.jpg'
+import flyer2 from './Images/flyer2.jpg'
 
 const SalahTime = () => {
   const [salahTimes, setSalahTimes] = useState(null);
@@ -12,10 +14,10 @@ const SalahTime = () => {
     const latitude = 39.9608;
     const longitude = -82.8771;
 
-
+    const currentDate = new Date().toISOString().slice(0, 10); 
     // Fetch Salah times using the Aladhan API
     axios
-      .get(`http://api.aladhan.com/v1/timings/${Date.now()}?latitude=${latitude}&longitude=${longitude}`)
+      .get(`http://api.aladhan.com/v1/timings/${currentDate}?latitude=${latitude}&longitude=${longitude}`)
       .then((response) => {
         setSalahTimes(response.data.data.timings);
       })
@@ -24,6 +26,7 @@ const SalahTime = () => {
       });
   }, []);
 
+  
   if (!salahTimes) {
     return <div>Loading Salah times...</div>;
   }
@@ -31,6 +34,7 @@ const SalahTime = () => {
   return (
     <div className="salah-time">
       <h2>Salah Times</h2>
+      <DateTimeDisplay />
       <ul>
         <li>Fajr: {salahTimes.Fajr}</li>
         <li>Dhuhr: {salahTimes.Dhuhr}</li>
@@ -41,6 +45,27 @@ const SalahTime = () => {
     </div>
   );
 };
+
+function DateTimeDisplay() {
+  const [currentDateTime, setCurrentDateTime] = useState(new Date());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentDateTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const formattedDateTime = currentDateTime.toLocaleString();
+
+  return (
+    <div>
+      <h2>Current Date and Time:</h2>
+      <p>{formattedDateTime}</p>
+    </div>
+  );
+}
 
 const MissionVision = () => {
   return (
@@ -55,19 +80,22 @@ const MissionVision = () => {
 
 const Event = () => {
   return (
+    
+      
     <div className="events">
-      <h2>Upcoming Events</h2>
-      <div>
-          <img src="./Images/Flyer3.png" alt="flyer number one" />
+      
+      <div className='card'>
+      <img src={ flyer} className='flyer' alt='flyer'/>
       </div>
-      <div>
-      <img src="/Images/flyer2.jpg" alt="Logo" />
+      <div className='card'>
+      <img src={flyer2}  className='flyer' alt='flyer'/>
       </div>
-      <div>
-          <img src="" alt="" />
+      <div className='card'>
+      <img src={flyer3}  className='flyer' alt='logo'/>
       </div>
 
     </div>
+    
   );
 };
 

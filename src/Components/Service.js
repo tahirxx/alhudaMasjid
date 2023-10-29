@@ -25,9 +25,9 @@ function Service() {
       <p>At Alhuda Islamic Center, we believe in the importance of community and social involvement. We host various events and activities, including charity drives, interfaith dialogues, and cultural celebrations. These opportunities provide a platform for our members to connect, share, and give back to society.</p>
       <h1>Join Us</h1>
       <p>We welcome you to participate in our services and be part of the Alhuda family. Whether you're seeking religious education, spiritual growth, or simply a sense of belonging in a caring community, Alhuda Islamic Center is here for you.
-
-      We look forward to serving you and growing together in faith and knowledge.</p>
+        We look forward to serving you and growing together in faith and knowledge.</p>
     </div>
+    
   );
 }
 

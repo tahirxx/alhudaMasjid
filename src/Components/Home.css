@@ -12,7 +12,7 @@
     /* You can add more CSS styles for the container as needed */
     display: grid;
     grid-template-columns: 1fr 4fr;
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
     grid-column-gap: 10px;
     grid-row-gap: 10px;
     /* grid-template-areas: "salat-time mission-vision events"; */
@@ -23,41 +23,63 @@
 .title {
   color: white;
   grid-area: 1 / 1 / 2 / 3;
-  position:relative; font-size:40px; font-weight:700;  letter-spacing:0px; text-transform:uppercase; width:600px; text-align:center; margin:auto; white-space:nowrap; border:2px solid #222;padding:5px 11px 3px 11px;
+  position:relative; font-size:40px; font-weight:700; background-color: #52bed1e0; letter-spacing:0px; text-transform:uppercase; width:600px; text-align:center; margin:auto; white-space:nowrap; border:2px ;padding:5px 11px 3px 11px;
   
 }
   .salah-time {
-    height: 400px;
-    grid-area: 2 / 1 / 6 / 2;
+    height: 200px;
+    grid-area: 2 / 1 / 3 / 3;
     background-color: #ca8611;
     color: #fff;
     /* width: 100px;
     height: 400px; */
     /* You can add styling for your sidebar here */
-    
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    font-family: Sans-serif;
+    font-size: 25px;
   }
   
   .mission-vision {
-    grid-area: 2 / 2 / 4 / 3;
-    background-color: #d04a2fe0;
+    grid-area: 3 / 1 / 4 / 3;
+    background-color: #52bed1e0;
     padding: 20px;
     /* width: 400px;
     height: 400px; */
     margin-top: auto;
-    /* You can add styling for your main content here */
+    font-size: 23px;
   }
+
 
   .mission-vision h1 {
     font-weight: bold;
   }
   .events {
-    grid-area: 4 / 2 / 6 / 3;
-    background-color: #c2391de0;
+    grid-area: 4 / 1 / 5 / 3;
+    
     padding: 20px;
     /* width: 400px;
     height: 400px; */
     display: flex;
+  
+    .card {
+      width: 500px; /* Adjust the width to your preference */
+      height: 600px; /* Adjust the height to your preference */
+      border: 1px solid #ccc;
+      box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+      padding: 10px;
+      margin: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      
+    }
     
+    .flyer {
+      width: 100%;
+      height: 600px; /* Adjust the image height as needed */
+      object-fit: cover;
+    }
     
     /* You can add styling for your main content here */
   }

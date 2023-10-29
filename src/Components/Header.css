@@ -3,9 +3,9 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #040404; /* Background color */
-  color: #fff; /* Text color */
-  /* padding: 10px; Padding around the navigation */
+  background-color: #040404; 
+  color: #fff; 
+ 
   border-radius: 1px;
   box-shadow: 0 5px 15px rgb(0, 0, 0, 0);
   width: 100%;
@@ -14,7 +14,7 @@ nav {
 
  }
 
-/* Add styles for the <ul> element */
+
 ul {
   list-style: none; /* Remove default list styles */
   padding: 0;
@@ -23,23 +23,37 @@ ul {
 
 }
 
-/* Add styles for the <li> elements (individual navigation items) */
+
 li {
   margin: 0;
 }
 
-/* Add styles for the <a> elements (links) */
+
 a {
+  font-size: 25px;
   text-decoration: none; /* Remove underline from links */
   color: #fff; /* Link text color */
   font-weight: bold; /* Make the text bold */
   padding: 5px;
 
-  /* Style links on hover */
+
   &:hover {
   
-    background-color: #2b98d6; /* Change the color on hover */
+    background-color: #2b98d6; 
     border-radius: 4px;
     transition: all 0.2s ease-in-out;
   }
+}
+
+.logo {
+  border-radius: 6em;
+}
+
+.donate-btn {
+  background-color: #2b98d6;
+  border-radius: 1em;
+  color:#040404;
+  font-size: 20px;
+  width: 200px;
+  align-items: center;
 }
