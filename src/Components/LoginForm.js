@@ -1,5 +1,6 @@
 // LoginForm.js
 import React, { useState } from 'react';
+import './LoginForm.css';
 
 function LoginForm() {
   const [formData, setFormData] = useState({
@@ -18,23 +19,30 @@ function LoginForm() {
   };
 
   return (
+       
     <form onSubmit={handleSubmit}>
-      <input
+      <div>
+      <input className='input'
         type="email"
         name="email"
         placeholder="Email"
         value={formData.email}
         onChange={handleInputChange}
       />
-      <input
+      </div>
+
+      <div>
+      <input className='input'
         type="password"
         name="password"
         placeholder="Password"
         value={formData.password}
         onChange={handleInputChange}
       />
-      <button type="submit">Login</button>
+      </div>
+      <button className='login-btn' type="submit">Login</button>
     </form>
+   
   );
 }
 

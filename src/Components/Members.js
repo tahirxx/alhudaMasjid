@@ -8,11 +8,11 @@ function Members() {
   return (
     <div className='container'>
       <div className='form'>
-      <h1>Registeration Form</h1>
-      <h2>Login</h2>
+      <h1 class="signIn">Sign In</h1>
+    
       <LoginForm />
-      <h2>Register</h2>
-      <RegistrationForm />
+       <br></br>
+     <RegistrationForm />
       </div>
     </div>
   );

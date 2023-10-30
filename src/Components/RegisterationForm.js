@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import axios from 'axios'; // You need to import axios
+import './Registeration.css';
+
 
 function RegistrationForm() {
   const [formData, setFormData] = useState({
-    username: '',
     email: '',
     password: '',
   });
+
+  const [formVisible, setFormVisible] = useState(false); // sets it to Initially hidden
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -30,31 +33,38 @@ function RegistrationForm() {
     }
   };
 
+  const toggleFormVisibility = () => {
+    setFormVisible(!formVisible); // Toggle form visibility
+  };
+
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        name="username"
-        placeholder="Username"
-        value={formData.username}
-        onChange={handleInputChange}
-      />
-      <input
+    <div>
+    <button onClick={toggleFormVisibility}>(Click to Sign Up)</button>
+    {formVisible && ( // Render the form only if formVisible is true
+    <form onSubmit={handleSubmit}> 
+    <div>
+    <input className='input'
         type="email"
         name="email"
         placeholder="Email"
         value={formData.email}
         onChange={handleInputChange}
       />
-      <input
+      </div>
+
+      <div>
+      <input className='input'
         type="password"
         name="password"
         placeholder="Password"
         value={formData.password}
         onChange={handleInputChange}
       />
-      <button type="submit">Register</button>
+      </div>
+      <button className='register-btn' type="submit">Register</button>
     </form>
+  )}
+  </div>
   );
 }
 
